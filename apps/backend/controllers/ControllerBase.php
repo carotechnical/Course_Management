@@ -21,7 +21,7 @@ class ControllerBase extends Controller
 
     protected function initialize()
     {
-        $this->tag->prependTitle('CaroFW Admin | ');
+        $this->tag->prependTitle('iEureka Admin | ');
         // config
         $this->view->setVar('carofw', $this->carofw);
         // language

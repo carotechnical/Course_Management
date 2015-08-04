@@ -31,6 +31,16 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ url('/admin/organizations') }}">
+                            <i class="icon-organization icon-large"></i> Organizations
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/admin/courses') }}">
+                            <i class="icon-course icon-large"></i> Courses
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ url('/admin/users') }}">
                             <i class="icon-user icon-large"></i> Users
                         </a>

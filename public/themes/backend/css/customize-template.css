@@ -5974,6 +5974,12 @@ ul.icons li .icon-large:before {
 .icon-book:before {
   content: "\f02d";
 }
+.icon-organization:before {
+    content: "\f02e";
+}
+.icon-course:before {
+    content: "\f02d";
+}
 .icon-bookmark:before {
   content: "\f02e";
 }

@@ -130,8 +130,13 @@ return array(
     'courses' => array(
         'fields' => array(
             'name' => array(
-                'type' => Column::TYPE_TEXT,
+                'type' => Column::TYPE_VARCHAR,
+                'size' => 255,
                 'notNull' => true
+            ),
+            'slug' => array(
+                'type' => Column::TYPE_VARCHAR,
+                'size' => 255,
             ),
             'description' => array(
                 'type' => Column::TYPE_TEXT,
@@ -183,7 +188,8 @@ return array(
     'course_types' => array(
         'fields' => array(
             'name' => array(
-                'type' => Column::TYPE_TEXT,
+                'type' => Column::TYPE_VARCHAR,
+                'size' => 255,
                 'notNull' => true
             )
         )
@@ -192,7 +198,8 @@ return array(
     'teachers' => array(
         'fields' => array(
             'name' => array(
-                'type' => Column::TYPE_TEXT,
+                'type' => Column::TYPE_VARCHAR,
+                'size' => 255,
                 'notNull' => true
             )
         )
@@ -201,7 +208,8 @@ return array(
     'locations' => array(
         'fields' => array(
             'name' => array(
-                'type' => Column::TYPE_TEXT,
+                'type' => Column::TYPE_VARCHAR,
+                'size' => 255,
                 'notNull' => true
             ),
             'address' => array(
@@ -214,17 +222,26 @@ return array(
     'schedules' => array(
         'fields' => array(
             'name' => array(
-                'type' => Column::TYPE_TEXT,
+                'type' => Column::TYPE_VARCHAR,
+                'size' => 255,
                 'notNull' => true
             ),
+            'description' => array(
+                'type' => Column::TYPE_TEXT
+            )
         )
     ),
 
     'categories' => array(
         'fields' => array(
             'name' => array(
-                'type' => Column::TYPE_TEXT,
+                'type' => Column::TYPE_VARCHAR,
+                'size' => 255,
                 'notNull' => true
+            ),
+            'slug' => array(
+                'type' => Column::TYPE_VARCHAR,
+                'size' => 255,
             ),
             'parent_id' => array(
                 'type' => Column::TYPE_INTEGER,
@@ -237,7 +254,8 @@ return array(
     'organizations' => array(
         'fields' => array(
             'name' => array(
-                'type' => Column::TYPE_TEXT,
+                'type' => Column::TYPE_VARCHAR,
+                'size' => 255,
                 'notNull' => true
             ),
             'description' => array(
@@ -296,7 +314,8 @@ return array(
     'news' => array(
         'fields' => array(
             'name' => array(
-                'type' => Column::TYPE_TEXT,
+                'type' => Column::TYPE_VARCHAR,
+                'size' => 255,
                 'notNull' => true
             ),
             'description' => array(

@@ -127,4 +127,187 @@ return array(
         )
     ),
 
+    'courses' => array(
+        'fields' => array(
+            'name' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => true
+            ),
+            'description' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => false
+            ),
+            'date_modified' => array(
+                'type' => Column::TYPE_DATETIME,
+                'notNull' => false
+            ),
+            'course_type_id' => array(
+                'type' => Column::TYPE_INTEGER,
+                'notNull' => false,
+                'size' => 10
+            ),
+            'start_date' => array(
+                'type' => Column::TYPE_DATETIME,
+                'notNull' => false
+            ),
+            'end_date' => array(
+                'type' => Column::TYPE_DATETIME,
+                'notNull' => false
+            ),
+            'note' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => false
+            ),
+            'fee' => array(
+                'type' => Column::TYPE_INTEGER,
+                'notNull' => false,
+                'size' => 10
+            ),
+            'teacher_ids' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => false
+            ),
+            'location_id' => array(
+                'type' => Column::TYPE_INTEGER,
+                'notNull' => false,
+                'size' => 10
+            ),
+            'category_id' => array(
+                'type' => Column::TYPE_INTEGER,
+                'notNull' => false,
+                'size' => 10
+            )
+        )
+    ),
+
+    'course_types' => array(
+        'fields' => array(
+            'name' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => true
+            )
+        )
+    ),
+
+    'teachers' => array(
+        'fields' => array(
+            'name' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => true
+            )
+        )
+    ),
+
+    'locations' => array(
+        'fields' => array(
+            'name' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => true
+            ),
+            'address' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => false
+            ),
+        )
+    ),
+
+    'schedules' => array(
+        'fields' => array(
+            'name' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => true
+            ),
+        )
+    ),
+
+    'categories' => array(
+        'fields' => array(
+            'name' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => true
+            ),
+            'parent_id' => array(
+                'type' => Column::TYPE_INTEGER,
+                'notNull' => false,
+                'size' => 10
+            ),
+        )
+    ),
+
+    'organizations' => array(
+        'fields' => array(
+            'name' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => true
+            ),
+            'description' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => false
+            ),
+            'website' => array(
+                'type' => Column::TYPE_VARCHAR,
+                'notNull' => false,
+                'size' => 255
+            ),
+            'office_phone' => array(
+                'type' => Column::TYPE_VARCHAR,
+                'notNull' => false,
+                'size' => 20
+            ),
+            'fax' => array(
+                'type' => Column::TYPE_VARCHAR,
+                'notNull' => false,
+                'size' => 20
+            ),
+            'teacher_ids' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => false
+            ),
+            'location_ids' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => false
+            ),
+            'note' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => false
+            )
+        )
+    ),
+
+    'comments' => array(
+        'fields' => array(
+            'content' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => true
+            ),
+            'parent_id' => array(
+                'type' => Column::TYPE_INTEGER,
+                'notNull' => true,
+                'size' => 10
+            ),
+            'parent_type' => array(
+                'type' => Column::TYPE_VARCHAR,
+                'notNull' => true,
+                'size' => 50
+            )
+        )
+    ),
+
+    'news' => array(
+        'fields' => array(
+            'name' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => true
+            ),
+            'description' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => true
+            ),
+            'content' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => true
+            ),
+        )
+    ),
+
 );

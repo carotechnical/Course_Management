@@ -62,10 +62,9 @@
 
 <footer class="application-footer">
     <div class="container">
-        <p>Admin Page - Caro Framework</p>
         <div class="disclaimer">
-            <p>Caro Framework. All right reserved.</p>
-            <p>Copyright Jacky 2015</p>
+            <p>iEureka. All right reserved.</p>
+            <p>Copyright iEureka 2015</p>
         </div>
     </div>
 </footer>

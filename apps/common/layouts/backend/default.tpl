@@ -43,6 +43,11 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ url('/admin/categories') }}">
+                            <i class="icon-qrcode icon-large"></i> Categories
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ url('/admin/users') }}">
                             <i class="icon-user icon-large"></i> Users
                         </a>

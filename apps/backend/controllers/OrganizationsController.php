@@ -8,7 +8,7 @@
 namespace Modules\Backend\Controllers;
 
 
-class OrganizationController extends ControllerBase{
+class OrganizationsController extends ControllerBase{
     public function indexAction()
     {
 

@@ -178,6 +178,52 @@ class ControllerBase extends Controller
 
     }
 
+    /**
+     * save/update a record
+     *
+     * @param array $data fields value, can use post data from form. This function filter same edit_view and save to db
+     * @return bool|null|object record
+     */
+    protected function saveRecord($data)
+    {
+        $model_name = $data['model_name'];
+        $model_name = ($model_name) ? $model_name : null;
+
+        // get model
+        $model = $this->getModel($model_name);
+
+        $id = $data['id'];
+
+        if (!empty($id)) { // update a record
+            // get record
+            $row = $model::findFirst($id);
+
+            // set data update
+            foreach ($model->edit_view['fields'] as $field => $opt) {
+                $row->$field = $data[$field];
+            }
+
+            if ($row->update() == false) {
+                return false;
+            }
+
+            return $row;
+
+        } else { // save new record
+            // set data save
+            foreach ($model->edit_view['fields'] as $field => $opt) {
+                $model->$field = $this->request->getPost($field);
+            }
+
+            // save
+            if ($model->save() == false) {
+                return false;
+            }
+
+            return $model;
+        }
+    }
+
     // BASE ACTION //
     /**
      * List

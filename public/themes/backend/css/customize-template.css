@@ -2173,14 +2173,14 @@ input.search-query {
 .form-horizontal .border-box{
     padding: 10px;
     border: 1px solid #ddd;
-    max-width: 350px;
+    max-width: 400px;
     border-radius: 4px;
 }
 .form-horizontal .list-checkbox{
-    max-height: 128px;
-    overflow-y: auto;
+    margin-bottom: 10px;
 }
 .form-horizontal .hidden-box{
+    margin: 15px 0 0;
     display: none;
 }
 .form-search label,
@@ -11486,4 +11486,34 @@ body > #body-container {
 }
 .form-list-search {
   margin: 0;
+}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+.list-checkbox .icon-chevron-right{
+    font-size: 12px;
+    margin-left: -16px;
+    width: 10px;
+    display: inline-block;
+}
+.list-checkbox .icon-remove{
+    color: #D9534F;
+    float: right;
+    margin-right: 10px;
 }

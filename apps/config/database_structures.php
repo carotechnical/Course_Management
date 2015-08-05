@@ -207,10 +207,29 @@ return array(
 
     'locations' => array(
         'fields' => array(
-            'name' => array(
+            'parent_type' => array(
+                'type' => Column::TYPE_VARCHAR,
+                'size' => 100,
+                'notNull' => false
+            ),
+            'parent_id' => array(
+                'type' => Column::TYPE_INTEGER,
+                'notNull' => false
+            ),
+            'country' => array(
                 'type' => Column::TYPE_VARCHAR,
                 'size' => 255,
-                'notNull' => true
+                'notNull' => false
+            ),
+            'province' => array(
+                'type' => Column::TYPE_VARCHAR,
+                'size' => 255,
+                'notNull' => false
+            ),
+            'district' => array(
+                'type' => Column::TYPE_VARCHAR,
+                'size' => 255,
+                'notNull' => false
             ),
             'address' => array(
                 'type' => Column::TYPE_TEXT,
@@ -277,18 +296,22 @@ return array(
                 'notNull' => false,
                 'size' => 20
             ),
-            'teacher_ids' => array(
+            'social_link' => array(
                 'type' => Column::TYPE_TEXT,
                 'notNull' => false
             ),
-            'location_ids' => array(
+            'teacher' => array(
                 'type' => Column::TYPE_TEXT,
                 'notNull' => false
             ),
             'note' => array(
                 'type' => Column::TYPE_TEXT,
                 'notNull' => false
-            )
+            ),
+            'intro_url' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => false
+            ),
         )
     ),
 

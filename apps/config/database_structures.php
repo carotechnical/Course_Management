@@ -298,6 +298,16 @@ return array(
                 'type' => Column::TYPE_TEXT,
                 'notNull' => true
             ),
+            'rating' => array(
+                'type' => Column::TYPE_INTEGER,
+                'notNull' => true,
+                'size' => 1
+            ),
+            'status' => array(
+                "type"    => Column::TYPE_VARCHAR,
+                "size"    => 255,
+                "notNull" => true,
+            ),
             'parent_id' => array(
                 'type' => Column::TYPE_INTEGER,
                 'notNull' => true,

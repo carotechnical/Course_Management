@@ -212,7 +212,7 @@ class ControllerBase extends Controller
         } else { // save new record
             // set data save
             foreach ($model->edit_view['fields'] as $field => $opt) {
-                $model->$field = $this->request->getPost($field);
+                $model->$field = $data[$field];
             }
 
             // save

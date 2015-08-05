@@ -186,8 +186,7 @@ class ControllerBase extends Controller
      */
     protected function saveRecord($data)
     {
-        $model_name = $data['model_name'];
-        $model_name = ($model_name) ? $model_name : null;
+        $model_name = !empty($data['model_name']) ? $data['model_name'] : null;
 
         // get model
         $model = $this->getModel($model_name);

@@ -112,6 +112,10 @@ class Users extends ModelBase
                 'required' => true,
                 'options' => 'users_status_list'
             ),
+            'avatar' => array(
+                'type' => 'image',
+                'label' => 'Avatar'
+            )
         )
     );
 

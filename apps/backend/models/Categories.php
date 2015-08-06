@@ -24,6 +24,10 @@ class Categories extends ModelBase
 
     public $list_view = array(
         'fields' => array(
+            'weight' => array(
+                'type' => 'text',
+                'label' => 'Weight'
+            ),
             'name' => array(
                 'type' => 'text',
                 'label' => 'Name',
@@ -42,6 +46,10 @@ class Categories extends ModelBase
     public $detail_view = array(
         'title' => 'name',
         'fields' => array(
+            'weight' => array(
+                'type' => 'text',
+                'label' => 'Weight',
+            ),
             'name' => array(
                 'type' => 'text',
                 'label' => 'Name',
@@ -61,6 +69,11 @@ class Categories extends ModelBase
     public $edit_view = array(
         'title' => 'name',
         'fields' => array(
+            'weight' => array(
+                'type' => 'text',
+                'label' => 'Weight',
+                'required' => true
+            ),
             'name' => array(
                 'type' => 'text',
                 'label' => 'Name',

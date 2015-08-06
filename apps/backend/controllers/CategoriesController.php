@@ -19,4 +19,16 @@ class CategoriesController extends ControllerBase
     {
         $this->listAction();
     }
+
+    public function listAction()
+    {
+//        $this->link_action = array(
+//            array(
+//                'link' => 'javascript:alert(\'<ID>\')',
+//                'icon' => 'icon-envelope-alt'
+//            )
+//        );
+
+        parent::listAction();
+    }
 }

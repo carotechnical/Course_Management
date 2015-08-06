@@ -9,14 +9,17 @@ use Phalcon\Paginator\Adapter\Model as PaginatorModel;
 
 class ControllerBase extends Controller
 {
+    // relate model
     protected $model_name;
-
+    // base controller
     protected $controller_name;
     protected $action_name;
     protected $action_detail = 'detail';
     protected $action_edit = 'edit';
     protected $action_delete = 'delete';
-
+    // button action
+    protected $link_action = null;
+    // translation
     protected $t;
 
     protected function initialize()
@@ -280,6 +283,7 @@ class ControllerBase extends Controller
         $this->view->action_edit = $this->action_edit;
         $this->view->action_delete = $this->action_delete;
         $this->view->menu = $model->menu;
+        $this->view->link_action = $this->link_action;
 
         $query_urls = empty($query_urls) ? array('nosearch' => 1) : $query_urls;
         $this->view->current_url = $this->url->get("/admin/$controller/$action", $query_urls);

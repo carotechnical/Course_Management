@@ -11506,7 +11506,7 @@ body > #body-container {
     cursor: inherit;
     display: block;
 }
-.list-checkbox .icon-chevron-right{
+.checkbox .icon-chevron-right{
     font-size: 12px;
     margin-left: -16px;
     width: 10px;

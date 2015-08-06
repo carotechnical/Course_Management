@@ -33,17 +33,23 @@
                     <label class="control-label">Địa điểm <span class="required">*</span></label>
                     <div class="controls border-box">
                         <div class="list-checkbox">
-                            <!--<div class="checkbox">
+                            {% if locations is not null %}
+                            {% for location in locations %}
+                            <div class="checkbox">
                                 <label>
                                     <i class="icon-chevron-right"></i>
-                                    <input type="hidden" name="location_nation[]" value="">
-                                    <input type="hidden" name="location_district[]" value="">
-                                    <input type="hidden" name="location_ward[]" value="">
-                                    <input type="hidden" name="location_address[]" value="">
-                                    <span>27B, Nguyễn Đình Chiểu, P1, Q.1, Hồ Chí Minh</span>
-                                    <a href=""><i class="icon-remove"></i></a>
+                                    <input type="hidden" name="location_id[]" value="{{ location['id'] }}">
+                                    <input type="hidden" name="location_country[]" value="{{ location['country'] }}">
+                                    <input type="hidden" name="location_province[]" value="{{ location['province'] }}">
+                                    <input type="hidden" name="location_district[]" value="{{ location['district'] }}">
+                                    <input type="hidden" name="location_address[]" value="{{ location['address'] }}">
+                                    <input type="hidden" name="location_deleted[]" value="0">
+                                    <span>{{ location['address'] ~ ', ' ~ location['district'] ~ ', ' ~ location['province'] ~ ', ' ~ location['country'] }}</span>
+                                    <a href="javascript:void(0)" onclick="return location_remove(this);"><i class="icon-remove"></i></a>
                                 </label>
-                            </div>-->
+                            </div>
+                            {% endfor %}
+                            {% endif %}
                             <div>
                                 <a href="javascript:void(0)"
                                    onclick="$(this).parent().find('.hidden-box').show();return false;">+ Tạo địa điểm
@@ -174,8 +180,9 @@
                       +'<input type="hidden" name="location_province[]" value="'+province+'">'
                       +'<input type="hidden" name="location_district[]" value="'+district+'">'
                       +'<input type="hidden" name="location_address[]" value="'+address+'">'
+                      +'<input type="hidden" name="location_deleted[]" value="0">'
                       +'<span>'+address+', '+district+', '+province+', '+country+'</span>'
-                      +'<a href="javascript:void(0)" onclick="$(this).parent().parent().remove();"><i class="icon-remove"></i></a>'
+                      +'<a href="javascript:void(0)" onclick="return location_remove(this)"><i class="icon-remove"></i></a>'
                       +'</label>'
                       +'</div>';
             $(this).parents('.list-checkbox').prepend(html);
@@ -183,4 +190,11 @@
             $(this).parents('.hidden-box').find('select, textarea').val('');
         });
     });
+
+    function location_remove(obj)
+    {
+        $(obj).parent().parent().hide();
+        $(obj).parent().find('input[name="location_deleted[]"]').val('1');
+        return false;
+    }
 </script>

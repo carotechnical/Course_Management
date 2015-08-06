@@ -21,15 +21,18 @@ class OrganizationsController extends ControllerBase{
     public function editAction($id = null)
     {
         $model = $this->getModel();
+        $locations = array();
         if ($id) {
             $data = $model::findFirst($id);
-
             $title = $this->t->_('Edit ') . $this->t->_($this->model_name) . ': ' . $data->{$model->edit_view['title']};
+            //locations
+            $model_location = $this->getModel('Locations');
+            $locations = $model_location->getList(array('parent_id' => $id));
 
         } else {
             $title = $this->t->_('Create ') . $this->t->_($this->model_name);
         }
-
+        $this->view->locations = $locations;
         $this->tag->setTitle($title);
         $this->view->title = $title;
 
@@ -57,8 +60,15 @@ class OrganizationsController extends ControllerBase{
                 'province' => $data['location_province'][$i],
                 'district' => $data['location_district'][$i],
                 'address' => $data['location_address'][$i],
+                'deleted' => $data['location_deleted'][$i],
             );
-            $this->saveRecord($data_location);
+            if($data_location['deleted'] == 1 && empty($data_location['id']))
+            {
+            }
+            else
+            {
+                $this->saveRecord($data_location);
+            }
         }
 
         $this->response->redirect('/admin/organizations/detail/' . $record->id);
@@ -66,19 +76,23 @@ class OrganizationsController extends ControllerBase{
     public function detailAction($id = null)
     {
         $model = $this->getModel();
-
+        $locations = array();
         if ($id) {
             $data = $model::findFirst($id);
 
             $title = $this->t->_('Detail ') . $this->t->_($this->model_name) . ': ' . $data->{$model->detail_view['title']};
 
+            $model_location = $this->getModel('Locations');
+            $locations = $model_location->getList(array('parent_id' => $id));
         }
+
 
         $this->tag->setTitle($title);
         $this->view->title = $title;
 
         $this->view->edit_view = $model->edit_view;
         $this->view->data = $data;
+        $this->view->locations = $locations;
 
         $this->view->controller = strtolower($this->controller_name);
         $this->view->action = 'save';

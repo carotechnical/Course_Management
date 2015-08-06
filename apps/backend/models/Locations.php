@@ -32,8 +32,50 @@ class Locations extends ModelBase{
             'district' => array(),
             'province' => array(),
             'address' => array(),
+            'deleted' => array(),
         )
     );
 
+    /**
+     * return all location depend conditions
+     * @author PhucLV
+     *
+     * @param array $conditions
+     * @return array
+     */
+    public function getList($conditions = array())
+    {
+        $default = 'deleted=0';
+        if(!empty($conditions))
+        {
+            foreach($conditions as $k => $v)
+            {
+                $default .= ' AND '.$k.'='.'"'.$v.'"';
+            }
+        }
+        $options = array(
+            $default,
+        );
+        $locations = self::find($options);
+
+        $output = array();
+        foreach($locations as $location)
+        {
+            $output[] = array(
+                'id' => $location->id,
+                'created' => $location->created,
+                'user_created_id' => $location->user_created_id,
+                'deleted' => $location->deleted,
+                'name' => $location->name,
+                'parent_type' => $location->parent_type,
+                'parent_id' => $location->parent_id,
+                'country' => $location->country,
+                'province' => $location->province,
+                'district' => $location->district,
+                'address' => $location->address,
+            );
+        }
+        return $output;
+    }
 
 }

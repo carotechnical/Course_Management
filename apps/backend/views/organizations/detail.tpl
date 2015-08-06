@@ -29,7 +29,15 @@
                         </tr>
                         <tr>
                             <td>Địa điểm</td>
-                            <td></td>
+                            <td>
+                                {% if locations is not null %}
+                                {% for location in locations %}
+                                <div class="checkbox">
+                                    <label><i class="icon-chevron-right"></i>{{ location['address'] ~ ', ' ~ location['district'] ~ ', ' ~ location['province'] ~ ', ' ~ location['country'] }}</label>
+                                </div>
+                                {% endfor %}
+                                {% endif %}
+                            </td>
                         </tr>
                         <tr>
                             <td>Giới thiệu</td>
@@ -49,7 +57,7 @@
                         </tr>
                         <tr>
                             <td>Giảng viên</td>
-                            <td></td>
+                            <td>{{ data.teacher}}</td>
                         </tr>
                         <tr>
                             <td>Hình ảnh</td>

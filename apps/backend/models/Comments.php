@@ -17,10 +17,15 @@ class Comments extends ModelBase
     public $created;
     public $user_created_id;
     public $deleted;
+    public $status;
     public $content;
     public $rating;
     public $parent_id;
     public $parent_type;
+
+    const STATUS_PENDING = 0;
+    const STATUS_APPROVED = 1;
+    const STATUS_REJECTED = 9;
 
     public $list_view = array(
         'fields' => array(

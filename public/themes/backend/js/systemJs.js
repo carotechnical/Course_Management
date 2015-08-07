@@ -26,7 +26,7 @@ jQuery(function() {
         formData.append('location', $(this).attr('location'));
         $.ajax({
             type: "POST",
-            url: base_url + "admin/index/upload",
+            url: base_url + "/admin/index/upload",
             data: formData,
             cache: false,
             contentType: false,

@@ -25,6 +25,10 @@ class Users extends ModelBase
 
     public $list_view = array(
         'fields' => array(
+            'avatar' => array(
+                'type' => 'image',
+                'label' => 'Avatar'
+            ),
             'username' => array(
                 'type' => 'text',
                 'label' => 'Username',
@@ -46,6 +50,10 @@ class Users extends ModelBase
     public $detail_view = array(
         'title' => 'name',
         'fields' => array(
+            'avatar' => array(
+                'type' => 'image',
+                'label' => 'Avatar'
+            ),
             'username' => array(
                 'type' => 'text',
                 'label' => 'Username'
@@ -57,7 +65,13 @@ class Users extends ModelBase
             'name' => array(
                 'type' => 'text',
                 'label' => 'Full name'
-            )
+            ),
+            'status' => array(
+                'type' => 'select',
+                'label' => 'Status',
+                'options' => 'users_status_list'
+            ),
+
         ),
         'subpanels' => array(
             'user_groups' => array(
@@ -115,7 +129,7 @@ class Users extends ModelBase
             'avatar' => array(
                 'type' => 'image',
                 'label' => 'Avatar'
-            )
+            ),
         )
     );
 

@@ -61,7 +61,7 @@
                         </tr>
                         <tr>
                             <td>Hình ảnh</td>
-                            <td></td>
+                            <td>{% if data.image_link is not null %}<img src="{{ data.image_link }}" width="60">{% endif %}</td>
                         </tr>
                         <tr>
                             <td>URL Video giới thiệu</td>

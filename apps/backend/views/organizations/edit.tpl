@@ -135,8 +135,12 @@
                 <div class="control-group ">
                     <label class="control-label">Hình ảnh trường</label>
                     <div class="controls">
+                        <div class="caro-image-content" style="padding-bottom: 5px;">
+                            {% if data.image_link is not null %}<img src="{{ data.image_link }}" class="img-thumbnail" style="height: 200px;">{% endif %}
+                        </div>
                         <span class="btn btn-default btn-file">
-                            Browse <input type="file">
+                                Browse <input type="file" class="caro-upload-image" location="images">
+                                <input type="hidden" name="image_link" class="caro-value-upload" value="{% if data is not null %}{{ data.image_link }}{% endif %}">
                         </span>
                     </div>
                 </div>

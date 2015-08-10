@@ -21,6 +21,7 @@ class Organizations extends ModelBase {
     public $teacher;
     public $intro_url;
     public $social_link;
+    public $image_link;
 
     public $list_view = array(
         'fields' => array(
@@ -54,6 +55,7 @@ class Organizations extends ModelBase {
             'note' => array(),
             'intro_url' => array(),
             'social_link' => array(),
+            'image_link' => array(),
         )
     );
 

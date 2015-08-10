@@ -324,6 +324,10 @@ return array(
                 'type' => Column::TYPE_TEXT,
                 'notNull' => false
             ),
+            'image_link' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => false
+            ),
         )
     ),
 

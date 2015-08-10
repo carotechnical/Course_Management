@@ -48,6 +48,11 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ url('/admin/teachers') }}">
+                            <i class="icon-user icon-large"></i> Teachers
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ url('/admin/users') }}">
                             <i class="icon-user icon-large"></i> Users
                         </a>

@@ -57,6 +57,10 @@ class Organizations extends ModelBase {
         )
     );
 
+    public $detail_view = array(
+        'title' => 'name'
+    );
+
     public $menu = array(
         'Create Organization' => '/admin/organizations/edit',
         'List Organization' => '/admin/organizations',

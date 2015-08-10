@@ -201,6 +201,18 @@ return array(
                 'type' => Column::TYPE_VARCHAR,
                 'size' => 255,
                 'notNull' => true
+            ),
+            'avatar' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => false
+            ),
+            'description' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => false
+            ),
+            'organization_id' => array(
+                'type' => Column::TYPE_INTEGER,
+                'notNull' => true
             )
         )
     ),

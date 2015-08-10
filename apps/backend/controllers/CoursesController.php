@@ -9,16 +9,10 @@ namespace Modules\Backend\Controllers;
 
 
 class CoursesController extends ControllerBase {
+    protected $model_name = 'Courses';
+
     public function indexAction()
     {
-
-    }
-    public function editAction()
-    {
-
-    }
-    public function detailAction()
-    {
-
+        $this->listAction();
     }
 }

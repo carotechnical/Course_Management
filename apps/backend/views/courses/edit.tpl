@@ -87,11 +87,21 @@
                 <label class="control-label">Thời gian</label>
                 <div class="controls">
                     <input id="current-username-control" name="spent_time" class="" type="text" value="{% if data is not null %}{{ data.spent_time }}{% endif %}">
+                    {% if data is not null %}
                     <select class="span2" name="spent_time_unit">
                         <option value="Day" {% if data.spent_time_unit == 'Day' %}selected="selected"{% endif %} >Ngày</option>
                         <option value="Week" {% if data.spent_time_unit == 'Week' %}selected="selected"{% endif %}>Tuần</option>
                         <option value="Month" {% if data.spent_time_unit == 'Month' %}selected="selected"{% endif %}>Tháng</option>
+                        <option value="Year" {% if data.spent_time_unit == 'Year' %}selected="selected"{% endif %}>Năm</option>
                     </select>
+                    {% else %}
+                    <select class="span2" name="spent_time_unit">
+                        <option value="Day">Ngày</option>
+                        <option value="Week">Tuần</option>
+                        <option value="Month">Tháng</option>
+                        <option value="Year">Năm</option>
+                    </select>
+                    {% endif %}
                 </div>
             </div>
             <div class="control-group ">

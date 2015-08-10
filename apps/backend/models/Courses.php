@@ -32,10 +32,27 @@ class Courses extends ModelBase{
 
     public $edit_view = array(
         'title' => 'name',
+        'fields' => array(
+            'name' => array(),
+            'slug' => array(),
+            'description' => array(),
+            'date_modified' => array(),
+            'course_type_id' => array(),
+            'start_date' => array(),
+            'end_date' => array(),
+            'note' => array(),
+            'fee' => array(),
+            'teacher_ids' => array(),
+            'category_id' => array(),
+            'organization_id' => array(),
+            'spent_time' => array(),
+            'spent_time_unit' => array(),
+        )
     );
 
     public $detail_view = array(
-        'title' => 'name'
+        'title' => 'name',
+
     );
 
     public $menu = array(

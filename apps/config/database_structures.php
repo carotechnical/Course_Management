@@ -152,11 +152,11 @@ return array(
                 'size' => 10
             ),
             'start_date' => array(
-                'type' => Column::TYPE_DATETIME,
+                'type' => Column::TYPE_DATE,
                 'notNull' => false
             ),
             'end_date' => array(
-                'type' => Column::TYPE_DATETIME,
+                'type' => Column::TYPE_DATE,
                 'notNull' => false
             ),
             'note' => array(
@@ -172,16 +172,25 @@ return array(
                 'type' => Column::TYPE_TEXT,
                 'notNull' => false
             ),
-            'location_id' => array(
-                'type' => Column::TYPE_INTEGER,
-                'notNull' => false,
-                'size' => 10
-            ),
             'category_id' => array(
                 'type' => Column::TYPE_INTEGER,
                 'notNull' => false,
                 'size' => 10
-            )
+            ),
+            'organization_id' => array(
+                'type' => Column::TYPE_INTEGER,
+                'notNull' => false,
+                'size' => 10,
+            ),
+            'spent_time' => array(
+                'type' => Column::TYPE_INTEGER,
+                'notNull' => false
+            ),
+            'spent_time_unit' => array(
+                'type' => Column::TYPE_VARCHAR,
+                'notNull' => false,
+                'size' => 10
+            ),
         )
     ),
 

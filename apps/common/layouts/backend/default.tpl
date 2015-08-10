@@ -112,7 +112,9 @@
 <script type="text/javascript">
     $(function() {
         $('.sorter-table').tablesorter();
-        $('.datepicker').datepicker();
+        $('.datepicker').datepicker({
+            format: 'dd/mm/yyyy'
+        });
         $(".chosen").chosen();
     });
 </script>

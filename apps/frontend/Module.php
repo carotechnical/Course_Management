@@ -58,7 +58,7 @@ class Module
                 }
             ));
             // global url
-            $view->setVar('theme_url', 'themes/' . $config->system_view->theme . '/');
+            $view->setVar('theme_uri', '/themes/' . $config->system_view->theme);
 
             return $view;
         };

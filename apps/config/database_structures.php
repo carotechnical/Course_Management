@@ -204,6 +204,16 @@ return array(
         )
     ),
 
+    'organization_types' => array(
+        'fields' => array(
+            'name' => array(
+                'type' => Column::TYPE_VARCHAR,
+                'size' => 255,
+                'notNull' => true
+            )
+        )
+    ),
+
     'teachers' => array(
         'fields' => array(
             'name' => array(

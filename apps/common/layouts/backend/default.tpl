@@ -47,6 +47,11 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ url('/admin/organization_types') }}">
+                            <i class="icon-qrcode icon-large"></i> Org Types
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ url('/admin/teachers') }}">
                             <i class="icon-user icon-large"></i> Teachers
                         </a>

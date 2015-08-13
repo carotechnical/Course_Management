@@ -52,6 +52,11 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ url('/admin/course_types') }}">
+                            <i class="icon-qrcode icon-large"></i> Course Types
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ url('/admin/teachers') }}">
                             <i class="icon-user icon-large"></i> Teachers
                         </a>

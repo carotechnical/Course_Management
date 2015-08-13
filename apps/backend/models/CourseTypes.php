@@ -10,7 +10,7 @@ namespace Modules\Backend\Models;
 
 use Phalcon\Validation;
 
-class OrganizationTypes extends ModelBase
+class CourseTypes extends ModelBase
 {
     public $id;
     public $created;
@@ -30,8 +30,8 @@ class OrganizationTypes extends ModelBase
             ),
             'description' => array(
                 'type' => 'text',
-                'label' => 'Description'
-            )
+                'label' => 'Description',
+            ),
         ),
     );
 
@@ -65,8 +65,8 @@ class OrganizationTypes extends ModelBase
     );
 
     public $menu = array(
-        'View Organization Types' => '/admin/organization_types/list',
-        'Create Organization Type' => '/admin/organization_types/edit'
+        'View Course Types' => '/admin/course_types/list',
+        'Create Course Type' => '/admin/course_types/edit'
     );
 
     public function validation()

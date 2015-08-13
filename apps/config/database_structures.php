@@ -210,6 +210,24 @@ return array(
                 'type' => Column::TYPE_VARCHAR,
                 'size' => 255,
                 'notNull' => true
+            ),
+            'description' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => false
+            ),
+        )
+    ),
+
+    'course_types' => array(
+        'fields' => array(
+            'name' => array(
+                'type' => Column::TYPE_VARCHAR,
+                'size' => 255,
+                'notNull' => true
+            ),
+            'description' => array(
+                'type' => Column::TYPE_TEXT,
+                'notNull' => false
             )
         )
     ),
